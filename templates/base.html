@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>employee management system</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="">OJAS innovative technologies</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="">Home</a></li>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                <form class="navbar-form navbar-left" action="{% url 'search' %}" method="get">
+                    <div class="form-group">
+                        <input name="query" type="text" class="form-control" placeholder="Search for employees">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <li><a href="accounts/profile/"><span class="glyphicon glyphicon-user"></span>Hello {{user.first_name}} </a></li>
+                <li><a href="change_password"><span class="glyphicon glyphicon-lock"></span>Change Password</a></li>
+                <li><a href="leave_request"><span class="glyphicon glyphicon-admin-in"></span> Leave Request</a></li>
+                <li><a href="leave_status"><span class="glyphicon glyphicon-admin-in"></span> Leave Status</a></li>
+                <li><a href="accounts/logout/"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+                {% else %}
+                <li><a href="accounts/register/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="accounts/login/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="/admin"><span class="glyphicon glyphicon-admin-in"></span> Admin</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>About Ojas Innovative Technologies</h1>
+        <p>Ojas is a Cost Effective IT Services Company with 9 years of rich experience in serving its customers with a team of 500+ IT Professionals. We’re one of the fastest growing companies in India providing Services in Application Dev & Support, Identity Governance, Testing Services, Mobile Dev & Testing, Staff Augmentation and Staffing Services to our customers.</p>
+        <h3>Application Dev & Support</h3>
+        <p>Ojas helps its customers to build robust business applications with quality, but yet cost effective. With more than 3 years of experience as an Organization and 15+ Years of experience inferred from the Leadership of Ojas, we strive to provide Cost Effective IT services to our customers enabling them to take the cost advantage to be competitive in their business.</p>
+        <h3>Identity Management</h3>
+        <p>Identity management is an important part of the Enterprise Security. Identity Management systems will add an additional layer of protection by ensuring user access policies and rules. Identity Management provides IT Managers with tools and technologies for controlling user access to critical information within an organization.</p>
+        <p>Identity Management makes it easier to manage the Lifecycle of an Identity for Organizations.</p>
+        <p>The core objective of Identity Management is One Identity per individual. Once the digital Identity has been established, it must be Maintained, Modified and Monitored throughout each user’s Identity Lifecycle.</p>
+        <p>It will be easy to manage this on a small scale, but it’s very challenging to do on a large scale. It’s not feasible for a team of people to manually maintain all of the changes to identities, so Identity Management is implemented to make this easier to do.</p>
+        <h3>Staff Augmentation</h3>
+        <p>This competitive market poses stern challenges to the IT companies in many areas. In simple words, whenever a new project is on board, hiring new professionals with apt skill set is a challenging task. Instead, companies can opt for Staff Augmentation services with OJAS to overcome the challenges they face in the project and deliver the output in a scheduled TAT (Turnaround Time).</p>
+    </div>
+</body>
+
+</html>

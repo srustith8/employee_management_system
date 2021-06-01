@@ -1,0 +1,1 @@
+web: gunicorn emsproject.wsgi --log-file -

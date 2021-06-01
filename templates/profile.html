@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2 style="text-align: center;background-color: rgb(228, 197, 156);">Profile</h2><br>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Username</th>
+                    <th>PhoneNumber</th>
+                    <th>Email</th>
+                    <th>Position</th>
+                </tr>
+            </thead>
+            {% for emp in employees %}
+            <tbody>
+                <tr>
+                    <td>{{emp.first_name}}</td>
+                    <td>{{emp.last_name}}</td>
+                    <td>{{emp.username}}</td>
+                    <td>{{emp.phone_number}}</td>
+                    <td>{{emp.email}}</td>
+                    <td>{{emp.position}}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+    </div>
+    </div>
+    </ul>
+</body>
+
+</html>

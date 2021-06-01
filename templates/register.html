@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Register</title>
+</head>
+
+<body>
+    <div class="container" style="background-color: rgba(78, 99, 138, 0.411);">
+        <diV class="row">
+            <div class="col-md-6 ">
+                <div style="margin-top: 300px;">
+                    <h1 style="color: rgb(107, 39, 218);font-style:Cursive,">
+                        OJAS Employee Management System
+                    </h1>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <form method="post">
+                    {% csrf_token %}
+                    <h2>Register</h2>
+                    <p>Please fill in this form to create an account.</p>
+                    <input type='text' class="form-control" name="first_name" placeholder="First Name" required /><br>
+                    <input type='text' class="form-control" name="last_name" placeholder="Last Name" /><br>
+                    <input type='text' class="form-control" name="username" placeholder="User Name" required><br>
+                    <input type='email' class="form-control" name="email" placeholder="Email" required><br>
+                    <input type='date' class="form-control" name="date_of_birth" placeholder=" date of birth" /><br>
+                    <input type='number' class="form-control" name="phone_number" placeholder=" phone number" /><br>
+                    <input type='text' class="form-control" name="national_id" placeholder=" national id" /><br>
+                    <input type='text' class="form-control" name="position" placeholder=" Position" /><br>
+                    <input type='password' class="form-control" name="password1" placeholder="Password" required><br>
+                    <input type='password' class="form-control" name="password2" placeholder="confirm Password" required><br>
+                    <div>
+                        {% for message in messages %}
+                        <h3> {{message}} </h3>
+                        {% endfor %}
+                    </div>
+                    <input class="btn btn-success" type="submit"><br>
+                    <div class="container signin">
+                        <h4>Already have an account? <a href="login">Log in</a></h4>
+                </form>
+            </div>
+        </diV>
+    </div>
+</body>
+
+</html>

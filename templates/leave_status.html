@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Leave Status</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2 style="text-align: center;background-color: rgb(228, 197, 156);">Leave Status</h2><br>            
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Employee ID</th>
+          <th>Type of leave</th>
+          <th>From Date</th>
+          <th>To Date</th>
+          <th>Department</th>
+          <th>Status</th>
+
+        </tr>
+              </thead>
+                    {% for emp in employees %}
+                    <tbody>
+                        <tr>
+                            <td>{{emp.username}}</td>
+                            <td>{{emp.employee_ID}}</td>
+                            <td>{{emp.type_of_leave}}</td>
+                            <td>{{emp.from_date}}</td>
+                            <td>{{emp.to_date}}</td>
+                            <td>{{emp.department}}</td>
+                            <td>{{emp.accepted}}</td>
+
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    </ul>
+</body>
+</html>
